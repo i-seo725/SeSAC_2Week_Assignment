@@ -28,6 +28,7 @@ class ViewController: UIViewController {
             i.setImage(UIImage(named: buttonTitle[i.tag]), for: .normal)
             i.backgroundColor = buttonColor[i.tag]
             i.tintColor = .white
+            i.setTitle("", for: .normal)
         }
     }
     

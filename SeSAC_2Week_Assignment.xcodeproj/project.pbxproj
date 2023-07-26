@@ -14,6 +14,7 @@
 		F409F50F2A6FBA6D00DD0AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F409F50E2A6FBA6D00DD0AB4 /* Assets.xcassets */; };
 		F409F5122A6FBA6D00DD0AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F409F5102A6FBA6D00DD0AB4 /* LaunchScreen.storyboard */; };
 		F409F51A2A6FC17200DD0AB4 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F409F5192A6FC17200DD0AB4 /* enum.swift */; };
+		F48F97342A70EFCD0032FC51 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F97332A70EFCD0032FC51 /* StatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F409F5112A6FBA6D00DD0AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F409F5132A6FBA6D00DD0AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F409F5192A6FC17200DD0AB4 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
+		F48F97332A70EFCD0032FC51 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F409F5092A6FBA6C00DD0AB4 /* ViewController.swift */,
 				F409F5192A6FC17200DD0AB4 /* enum.swift */,
 				F409F50B2A6FBA6C00DD0AB4 /* Main.storyboard */,
+				F48F97332A70EFCD0032FC51 /* StatViewController.swift */,
 				F409F50E2A6FBA6D00DD0AB4 /* Assets.xcassets */,
 				F409F5102A6FBA6D00DD0AB4 /* LaunchScreen.storyboard */,
 				F409F5132A6FBA6D00DD0AB4 /* Info.plist */,
@@ -144,6 +147,7 @@
 				F409F50A2A6FBA6C00DD0AB4 /* ViewController.swift in Sources */,
 				F409F5062A6FBA6C00DD0AB4 /* AppDelegate.swift in Sources */,
 				F409F51A2A6FC17200DD0AB4 /* enum.swift in Sources */,
+				F48F97342A70EFCD0032FC51 /* StatViewController.swift in Sources */,
 				F409F5082A6FBA6C00DD0AB4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
