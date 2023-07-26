@@ -73,9 +73,14 @@ class StatViewController: UIViewController {
     }
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         makeAlert()
-        for i in countKey {
-            UserDefaults.standard.set(0, forKey: i)
-        }
+//        for i in countKey {
+//            UserDefaults.standard.set(0, forKey: i)
+//        }
+        UserDefaults.standard.set(0, forKey: "happyCount")
+        UserDefaults.standard.set(0, forKey: "goodCount")
+        UserDefaults.standard.set(0, forKey: "sosoCount")
+        UserDefaults.standard.set(0, forKey: "badCount")
+        UserDefaults.standard.set(0, forKey: "sadCount")
         emotionCount()
     }
     
