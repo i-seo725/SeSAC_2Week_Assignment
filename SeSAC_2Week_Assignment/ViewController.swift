@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var emotionButtons: [UIButton]!
     @IBOutlet var tabBar: UITabBarItem!
@@ -16,7 +16,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         designTitleLabel()
         designButtons()
+        
+        if first != 0 { clickedCount[0] = first }
+        if second != 0 { clickedCount[1] = second }
+        if third != 0 { clickedCount[2] = third }
+        if fourth != 0 { clickedCount[3] = fourth }
+        if fifth != 0 { clickedCount[4] = fifth }
+        print(clickedCount)
+        
     }
+    
+    let first = UserDefaults.standard.integer(forKey: "happyCount")
+    let second = UserDefaults.standard.integer(forKey: "goodCount")
+    let third = UserDefaults.standard.integer(forKey: "sosoCount")
+    let fourth = UserDefaults.standard.integer(forKey: "badCount")
+    let fifth = UserDefaults.standard.integer(forKey: "sadCount")
+    
+    let countKey = ["happyCount", "goodCount", "sosoCount", "badCount", "sadCount"]
     func designTitleLabel() {
         titleLabel.textAlignment = .center
         titleLabel.text = "OH MY MOOD"
@@ -33,7 +49,8 @@ class ViewController: UIViewController {
     }
     
     var clickedCount = [0, 0, 0, 0, 0]
-//    let emotionButtons = Emotion.allCases
+    
+    //    let emotionButtons = Emotion.allCases
     
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
         guard let button = Emotion(rawValue: sender.tag) else {
@@ -62,9 +79,11 @@ class ViewController: UIViewController {
             print("슬퍼 버튼을 \(clickedCount[Emotion.sad.rawValue])회 클릭했습니다.")
             UserDefaults.standard.set(clickedCount[Emotion.sad.rawValue], forKey: "sadCount")
         }
+        print(clickedCount)
+        print(first, second, third, fourth, fifth)
     }
     
     
-    
 }
+
 

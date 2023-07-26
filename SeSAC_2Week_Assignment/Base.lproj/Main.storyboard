@@ -31,7 +31,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
-                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VNZ-Mw-iic"/>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ABj-yH-9hI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvz-yu-zUy">
@@ -39,7 +39,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
-                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3bZ-vJ-gTb"/>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zm4-qO-yfC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahl-Yj-teP">
@@ -47,7 +47,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
-                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wcp-Kg-JcE"/>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GZe-Jz-pLd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaC-9I-WIy">
@@ -55,7 +55,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
-                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1O0-oj-rCL"/>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qkz-BF-L56"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gL-h0-W6m">
@@ -63,7 +63,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
-                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4o7-eb-3JX"/>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N6W-GU-bqg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -83,7 +83,7 @@
                     <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" id="Sit-op-njm"/>
                     <connections>
                         <outlet property="tabBar" destination="Sit-op-njm" id="NnM-nk-ulr"/>
-                        <outlet property="titleLabel" destination="myL-ug-Hos" id="HXt-Fh-oq8"/>
+                        <outlet property="titleLabel" destination="myL-ug-Hos" id="UeF-EU-Y0i"/>
                         <outletCollection property="emotionButtons" destination="nnK-NV-jxL" collectionClass="NSMutableArray" id="HHp-yQ-D6I"/>
                         <outletCollection property="emotionButtons" destination="Lvz-yu-zUy" collectionClass="NSMutableArray" id="hvW-uB-tKH"/>
                         <outletCollection property="emotionButtons" destination="Ahl-Yj-teP" collectionClass="NSMutableArray" id="leq-6u-DwO"/>
@@ -283,6 +283,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="WEo-rF-gOx"/>
                     <connections>
+                        <outlet property="titleLabel" destination="Fod-Po-9xv" id="dbT-fw-xiA"/>
                         <outletCollection property="viewCollection" destination="x1O-lY-4ys" collectionClass="NSMutableArray" id="Vt5-cD-pg4"/>
                         <outletCollection property="viewCollection" destination="owd-Pc-Mh4" collectionClass="NSMutableArray" id="NK1-Fc-eWY"/>
                         <outletCollection property="viewCollection" destination="8iF-0I-Cfl" collectionClass="NSMutableArray" id="pEV-bL-nPG"/>

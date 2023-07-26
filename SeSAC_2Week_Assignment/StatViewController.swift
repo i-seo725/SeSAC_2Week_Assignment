@@ -12,12 +12,15 @@ class StatViewController: UIViewController {
     @IBOutlet var viewCollection: [UIView]!
     @IBOutlet var emotionTitles: [UILabel]!
     @IBOutlet var countLabels: [UILabel]!
+    @IBOutlet var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         designViews()
         designTitles()
         designCountLabel()
+        titleLabel.text = "OH MY MOOD"
+        emotionCount()
     }
     
     func designViews() {
@@ -46,7 +49,9 @@ class StatViewController: UIViewController {
     }
     func emotionCount() {
         for i in countLabels {
-            i.text = UserDefaults.standard.string(forKey: countKey[i.tag])
+            let count = UserDefaults.standard.integer(forKey: countKey[i.tag])
+            i.text = String(count)
+            print(count)
         }
     }
     
