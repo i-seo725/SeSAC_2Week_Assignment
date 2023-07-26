@@ -22,10 +22,10 @@ class ViewController: UIViewController {
         titleLabel.text = "OH MY MOOD"
     }
     func designButtons() {
-        let buttonTitle = ["완전 행복해", "좋아", "그냥저냥", "속상해", "슬퍼"]
+        let buttonTitle = ["emoji1", "emoji2", "emoji3", "emoji4", "emoji5"]
         let buttonColor = [UIColor.systemPink, UIColor.systemOrange, UIColor.systemYellow, UIColor.systemGreen, UIColor.systemBlue]
         for i in emotionButtons {
-            i.setTitle(buttonTitle[i.tag], for: .normal)
+            i.setImage(UIImage(named: buttonTitle[i.tag]), for: .normal)
             i.backgroundColor = buttonColor[i.tag]
             i.tintColor = .white
         }
@@ -35,24 +35,31 @@ class ViewController: UIViewController {
 //    let emotionButtons = Emotion.allCases
     
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
-        switch sender.tag {
-        case Emotion.happy.rawValue:
+        guard let button = Emotion(rawValue: sender.tag) else {
+            print("오류 발생")
+            return
+        }
+        switch button {
+        case .happy:
             clickedCount[0] += 1
             print("완전 행복해 버튼을 \(clickedCount[Emotion.happy.rawValue])회 클릭했습니다.")
-        case Emotion.good.rawValue:
+            UserDefaults.standard.set(clickedCount[Emotion.happy.rawValue], forKey: "happyCount")
+        case Emotion.good:
             clickedCount[1] += 1
             print("좋아 버튼을 \(clickedCount[Emotion.good.rawValue])회 클릭했습니다.")
-        case Emotion.soso.rawValue:
+            UserDefaults.standard.set(clickedCount[Emotion.good.rawValue], forKey: "goodCount")
+        case .soso:
             clickedCount[2] += 1
             print("그냥저냥 버튼을 \(clickedCount[Emotion.soso.rawValue])회 클릭했습니다.")
-        case Emotion.bad.rawValue:
+            UserDefaults.standard.set(clickedCount[Emotion.soso.rawValue], forKey: "sosoCount")
+        case .bad:
             clickedCount[3] += 1
             print("속상해 버튼을 \(clickedCount[Emotion.bad.rawValue])회 클릭했습니다.")
-        case Emotion.sad.rawValue:
+            UserDefaults.standard.set(clickedCount[Emotion.bad.rawValue], forKey: "badCount")
+        case .sad:
             clickedCount[4] += 1
             print("슬퍼 버튼을 \(clickedCount[Emotion.sad.rawValue])회 클릭했습니다.")
-        default:
-            print("오류 발생")
+            UserDefaults.standard.set(clickedCount[Emotion.sad.rawValue], forKey: "sadCount")
         }
     }
     
