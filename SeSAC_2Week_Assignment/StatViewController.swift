@@ -13,16 +13,26 @@ class StatViewController: UIViewController {
     @IBOutlet var emotionTitles: [UILabel]!
     @IBOutlet var countLabels: [UILabel]!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var resetButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         designViews()
         designTitles()
         designCountLabel()
+        designResetButton()
         titleLabel.text = "OH MY MOOD"
         emotionCount()
     }
-    
+    func designResetButton() {
+        resetButton.tintColor = .red
+        resetButton.backgroundColor = .white
+        resetButton.layer.borderColor = UIColor.red.cgColor
+        resetButton.layer.borderWidth = 2
+        resetButton.layer.cornerRadius = 15
+        resetButton.setTitle("RESET", for: .normal)
+        resetButton.setTitle("데이터를 삭제합니다.", for: .highlighted)
+    }
     func designViews() {
         let color = [UIColor.systemPink, UIColor.systemOrange, UIColor.systemYellow, UIColor.systemGreen, UIColor.systemBlue]
         for i in viewCollection {
@@ -54,6 +64,19 @@ class StatViewController: UIViewController {
             print(count)
         }
     }
-    
+    func makeAlert() {
+        let alert = UIAlertController(title: "리셋", message: "정말 리셋하시겠습니까?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .destructive)
+        alert.addAction(ok)
+        present(alert, animated: true)
+        
+    }
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        makeAlert()
+        for i in countKey {
+            UserDefaults.standard.set(0, forKey: i)
+        }
+        emotionCount()
+    }
     
 }

@@ -269,20 +269,36 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDj-sy-TGj">
+                                <rect key="frame" x="20" y="591" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mlo-dd-GuB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="zJx-ZK-dAD" eventType="touchUpInside" id="hIr-FV-7Bn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hhi-YR-paO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AGR-BK-GSI" firstAttribute="leading" secondItem="Hhi-YR-paO" secondAttribute="leading" constant="20" id="6Ts-ax-nrK"/>
+                            <constraint firstItem="eDj-sy-TGj" firstAttribute="top" secondItem="AGR-BK-GSI" secondAttribute="bottom" constant="50" id="8Bl-1Z-NIp"/>
+                            <constraint firstItem="eDj-sy-TGj" firstAttribute="leading" secondItem="Hhi-YR-paO" secondAttribute="leading" constant="20" id="8Ch-Xc-MiS"/>
                             <constraint firstItem="AGR-BK-GSI" firstAttribute="centerX" secondItem="MPr-Fv-dKO" secondAttribute="centerX" id="Nwk-fE-lVc"/>
                             <constraint firstItem="Fod-Po-9xv" firstAttribute="top" secondItem="Hhi-YR-paO" secondAttribute="top" constant="10" id="QX2-1o-TzJ"/>
                             <constraint firstItem="Fod-Po-9xv" firstAttribute="centerX" secondItem="Hhi-YR-paO" secondAttribute="centerX" id="R01-DG-tLX"/>
+                            <constraint firstItem="Hhi-YR-paO" firstAttribute="trailing" secondItem="eDj-sy-TGj" secondAttribute="trailing" constant="20" id="RSe-79-nkD"/>
                             <constraint firstItem="AGR-BK-GSI" firstAttribute="height" secondItem="MPr-Fv-dKO" secondAttribute="height" multiplier="0.5" id="hWa-4r-v4k"/>
+                            <constraint firstItem="eDj-sy-TGj" firstAttribute="centerX" secondItem="MPr-Fv-dKO" secondAttribute="centerX" id="pzo-d5-7fQ"/>
                             <constraint firstItem="AGR-BK-GSI" firstAttribute="top" secondItem="Fod-Po-9xv" secondAttribute="bottom" constant="25.666666666666671" id="taE-40-iVr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="WEo-rF-gOx"/>
                     <connections>
+                        <outlet property="resetButton" destination="eDj-sy-TGj" id="edU-HW-sBd"/>
                         <outlet property="titleLabel" destination="Fod-Po-9xv" id="dbT-fw-xiA"/>
                         <outletCollection property="viewCollection" destination="x1O-lY-4ys" collectionClass="NSMutableArray" id="Vt5-cD-pg4"/>
                         <outletCollection property="viewCollection" destination="owd-Pc-Mh4" collectionClass="NSMutableArray" id="NK1-Fc-eWY"/>
