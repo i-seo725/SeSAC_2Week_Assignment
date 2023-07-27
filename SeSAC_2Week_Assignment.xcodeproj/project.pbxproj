@@ -60,17 +60,25 @@
 		F409F5042A6FBA6C00DD0AB4 /* SeSAC_2Week_Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				F4553D012A725182007E9129 /* EmotionDiary */,
 				F409F5052A6FBA6C00DD0AB4 /* AppDelegate.swift */,
 				F409F5072A6FBA6C00DD0AB4 /* SceneDelegate.swift */,
-				F409F5092A6FBA6C00DD0AB4 /* ViewController.swift */,
-				F409F5192A6FC17200DD0AB4 /* enum.swift */,
-				F409F50B2A6FBA6C00DD0AB4 /* Main.storyboard */,
-				F48F97332A70EFCD0032FC51 /* StatViewController.swift */,
 				F409F50E2A6FBA6D00DD0AB4 /* Assets.xcassets */,
 				F409F5102A6FBA6D00DD0AB4 /* LaunchScreen.storyboard */,
 				F409F5132A6FBA6D00DD0AB4 /* Info.plist */,
 			);
 			path = SeSAC_2Week_Assignment;
+			sourceTree = "<group>";
+		};
+		F4553D012A725182007E9129 /* EmotionDiary */ = {
+			isa = PBXGroup;
+			children = (
+				F409F5192A6FC17200DD0AB4 /* enum.swift */,
+				F409F50B2A6FBA6C00DD0AB4 /* Main.storyboard */,
+				F409F5092A6FBA6C00DD0AB4 /* ViewController.swift */,
+				F48F97332A70EFCD0032FC51 /* StatViewController.swift */,
+			);
+			path = EmotionDiary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
