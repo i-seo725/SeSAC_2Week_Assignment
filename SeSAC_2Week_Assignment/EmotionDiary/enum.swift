@@ -10,3 +10,11 @@ import Foundation
 enum Emotion: Int, CaseIterable {
     case happy, good, soso, bad, sad
 }
+
+enum EmotionCount: String {
+    case happy = "happyCount"
+    case good = "goodCount"
+    case soso = "sosoCount"
+    case bad = "badCount"
+    case sad = "sadCount"
+}

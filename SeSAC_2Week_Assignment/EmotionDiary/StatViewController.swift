@@ -22,7 +22,6 @@ class StatViewController: UIViewController {
         designCountLabel()
         designResetButton()
         titleLabel.text = "OH MY MOOD"
-        emotionCount()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,7 +44,8 @@ class StatViewController: UIViewController {
         }
     }
     let labelColors = [UIColor.white, UIColor.black, UIColor.black, UIColor.black, UIColor.white]
-    let countKey = ["happyCount", "goodCount", "sosoCount", "badCount", "sadCount"]
+    let countKey = [EmotionCount.happy.rawValue, EmotionCount.good.rawValue, EmotionCount.soso.rawValue, EmotionCount.bad.rawValue, EmotionCount.sad.rawValue]
+    
     func designTitles() {
         let titles = ["완전행복지수", "적당미소지수", "그냥저냥지수", "좀속상한지수", "많이슬픈지수"]
         for i in emotionTitles {
@@ -58,14 +58,12 @@ class StatViewController: UIViewController {
         for i in countLabels {
             i.textColor = labelColors[i.tag]
             i.font = UIFont.systemFont(ofSize: 30)
-            emotionCount()
         }
     }
     func emotionCount() {
         for i in countLabels {
             let count = UserDefaults.standard.integer(forKey: countKey[i.tag])
-            i.text = String(count)
-            print(count)
+            i.text = "\(count)"
         }
     }
     func makeAlert() {
@@ -80,11 +78,11 @@ class StatViewController: UIViewController {
 //        for i in countKey {
 //            UserDefaults.standard.set(0, forKey: i)
 //        }
-        UserDefaults.standard.set(0, forKey: "happyCount")
-        UserDefaults.standard.set(0, forKey: "goodCount")
-        UserDefaults.standard.set(0, forKey: "sosoCount")
-        UserDefaults.standard.set(0, forKey: "badCount")
-        UserDefaults.standard.set(0, forKey: "sadCount")
+        UserDefaults.standard.set(0, forKey: EmotionCount.happy.rawValue)
+        UserDefaults.standard.set(0, forKey: EmotionCount.good.rawValue)
+        UserDefaults.standard.set(0, forKey: EmotionCount.soso.rawValue)
+        UserDefaults.standard.set(0, forKey: EmotionCount.bad.rawValue)
+        UserDefaults.standard.set(0, forKey: EmotionCount.sad.rawValue)
         emotionCount()
     }
     

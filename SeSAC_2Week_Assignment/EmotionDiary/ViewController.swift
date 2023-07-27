@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         designTitleLabel()
         designButtons()
-        countSetting()
         
         print(clickedCount)
         
@@ -27,20 +26,21 @@ class ViewController: UIViewController {
     }
     
     func countSetting() {
-        if first != 0 { clickedCount[0] = first } else { clickedCount[0] = 0 }
-        if second != 0 { clickedCount[1] = second } else { clickedCount[1] = 0 }
-        if third != 0 { clickedCount[2] = third } else { clickedCount[2] = 0 }
-        if fourth != 0 { clickedCount[3] = fourth } else { clickedCount[3] = 0 }
-        if fifth != 0 { clickedCount[4] = fifth } else { clickedCount[4] = 0 }
+        clickedCount[0] = first == 0 ? 0 : 1
+        clickedCount[1] = second == 0 ? 0 : 1
+        clickedCount[2] = third == 0 ? 0 : 1
+        clickedCount[3] = fourth == 0 ? 0 : 1
+        clickedCount[4] = fifth == 0 ? 0 : 1
+        
     }
     
-    let first = UserDefaults.standard.integer(forKey: "happyCount")
-    let second = UserDefaults.standard.integer(forKey: "goodCount")
-    let third = UserDefaults.standard.integer(forKey: "sosoCount")
-    let fourth = UserDefaults.standard.integer(forKey: "badCount")
-    let fifth = UserDefaults.standard.integer(forKey: "sadCount")
+    let first = UserDefaults.standard.integer(forKey: EmotionCount.happy.rawValue)
+    let second = UserDefaults.standard.integer(forKey: EmotionCount.good.rawValue)
+    let third = UserDefaults.standard.integer(forKey: EmotionCount.soso.rawValue)
+    let fourth = UserDefaults.standard.integer(forKey: EmotionCount.bad.rawValue)
+    let fifth = UserDefaults.standard.integer(forKey: EmotionCount.sad.rawValue)
     
-    let countKey = ["happyCount", "goodCount", "sosoCount", "badCount", "sadCount"]
+    let countKey = [EmotionCount.happy.rawValue, EmotionCount.good.rawValue, EmotionCount.soso.rawValue, EmotionCount.bad.rawValue, EmotionCount.sad.rawValue]
     func designTitleLabel() {
         titleLabel.textAlignment = .center
         titleLabel.text = "OH MY MOOD"
@@ -69,23 +69,23 @@ class ViewController: UIViewController {
         case .happy:
             clickedCount[0] += 1
             print("완전 행복해 버튼을 \(clickedCount[Emotion.happy.rawValue])회 클릭했습니다.")
-            UserDefaults.standard.set(clickedCount[Emotion.happy.rawValue], forKey: "happyCount")
+            UserDefaults.standard.set(clickedCount[Emotion.happy.rawValue], forKey: EmotionCount.happy.rawValue)
         case Emotion.good:
             clickedCount[1] += 1
             print("좋아 버튼을 \(clickedCount[Emotion.good.rawValue])회 클릭했습니다.")
-            UserDefaults.standard.set(clickedCount[Emotion.good.rawValue], forKey: "goodCount")
+            UserDefaults.standard.set(clickedCount[Emotion.good.rawValue], forKey: EmotionCount.good.rawValue)
         case .soso:
             clickedCount[2] += 1
             print("그냥저냥 버튼을 \(clickedCount[Emotion.soso.rawValue])회 클릭했습니다.")
-            UserDefaults.standard.set(clickedCount[Emotion.soso.rawValue], forKey: "sosoCount")
+            UserDefaults.standard.set(clickedCount[Emotion.soso.rawValue], forKey: EmotionCount.soso.rawValue)
         case .bad:
             clickedCount[3] += 1
             print("속상해 버튼을 \(clickedCount[Emotion.bad.rawValue])회 클릭했습니다.")
-            UserDefaults.standard.set(clickedCount[Emotion.bad.rawValue], forKey: "badCount")
+            UserDefaults.standard.set(clickedCount[Emotion.bad.rawValue], forKey: EmotionCount.bad.rawValue)
         case .sad:
             clickedCount[4] += 1
             print("슬퍼 버튼을 \(clickedCount[Emotion.sad.rawValue])회 클릭했습니다.")
-            UserDefaults.standard.set(clickedCount[Emotion.sad.rawValue], forKey: "sadCount")
+            UserDefaults.standard.set(clickedCount[Emotion.sad.rawValue], forKey: EmotionCount.sad.rawValue)
         }
         print(clickedCount)
         print(first, second, third, fourth, fifth)
