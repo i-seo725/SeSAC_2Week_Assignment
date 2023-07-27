@@ -16,14 +16,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         designTitleLabel()
         designButtons()
+        countSetting()
         
-        if first != 0 { clickedCount[0] = first }
-        if second != 0 { clickedCount[1] = second }
-        if third != 0 { clickedCount[2] = third }
-        if fourth != 0 { clickedCount[3] = fourth }
-        if fifth != 0 { clickedCount[4] = fifth }
         print(clickedCount)
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        countSetting()
+    }
+    
+    func countSetting() {
+        if first != 0 { clickedCount[0] = first } else { clickedCount[0] = 0 }
+        if second != 0 { clickedCount[1] = second } else { clickedCount[1] = 0 }
+        if third != 0 { clickedCount[2] = third } else { clickedCount[2] = 0 }
+        if fourth != 0 { clickedCount[3] = fourth } else { clickedCount[3] = 0 }
+        if fifth != 0 { clickedCount[4] = fifth } else { clickedCount[4] = 0 }
     }
     
     let first = UserDefaults.standard.integer(forKey: "happyCount")
