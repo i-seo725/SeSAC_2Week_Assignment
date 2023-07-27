@@ -65,16 +65,10 @@ class StatViewController: UIViewController {
             let count = UserDefaults.standard.integer(forKey: countKey[i.tag])
             i.text = "\(count)"
         }
-    }
-    func makeAlert() {
-        let alert = UIAlertController(title: "리셋", message: "정말 리셋하시겠습니까?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "확인", style: .destructive)
-        alert.addAction(ok)
-        present(alert, animated: true)
-        
-    }
+    }        
+    
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        makeAlert()
+        makeAlert(title: "리셋 확인", message: "정말 리셋하시겠습니까?")
 //        for i in countKey {
 //            UserDefaults.standard.set(0, forKey: i)
 //        }
