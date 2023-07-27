@@ -24,6 +24,10 @@ class StatViewController: UIViewController {
         titleLabel.text = "OH MY MOOD"
         emotionCount()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emotionCount()
+    }
     func designResetButton() {
         resetButton.tintColor = .red
         resetButton.backgroundColor = .white
